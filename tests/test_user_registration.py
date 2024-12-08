@@ -1,6 +1,8 @@
 import re
 from playwright.sync_api import Playwright, sync_playwright, expect
-# provide new user email in line 15
+
+# provide new user email below
+
 
 def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
@@ -12,8 +14,8 @@ def run(playwright: Playwright) -> None:
     page.get_by_role("button", name="Create").click()
     page.get_by_label("Enter email").click()
     page.get_by_label("Enter email").fill(
-        "new-user@example.com"
-    )  # TODO insert some new unused email here
+        "new-user@example.com"  # provide new user email
+    )
     page.get_by_role("button", name="Create").click()
     # Create Account Page Checks
     expect(page.get_by_role("main")).to_contain_text("Create your account")

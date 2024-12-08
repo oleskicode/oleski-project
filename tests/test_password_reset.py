@@ -1,6 +1,8 @@
 import re
 from playwright.sync_api import Playwright, sync_playwright, expect
-# provide email value of already registered user in line 20
+
+# provide email value of already registered user below
+
 
 def test_password_reset(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
@@ -17,7 +19,7 @@ def test_password_reset(playwright: Playwright) -> None:
     page.get_by_role("link", name="Forgot your password?").click()
     page.get_by_label("Enter email").click()
     page.get_by_label("Enter email").fill(
-        "registered-user@example.com"
+        "registered-user@example.com"  # provide email
     )  # TODO remove explicit email from code
     expect(page.locator("#qa-restore-button")).to_contain_text("Restore")
     page.get_by_role("button", name="Restore").click()

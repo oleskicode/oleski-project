@@ -1,5 +1,7 @@
 from playwright.sync_api import Playwright, sync_playwright, expect
-# to test user login, provide email + password into line 12 and 15
+
+# to test user login, provide email + password below
+
 
 def test_login(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
@@ -9,10 +11,10 @@ def test_login(playwright: Playwright) -> None:
     page.goto("https://freevpnplanet.com/")
     page.get_by_role("link", name="login").click()
     page.get_by_label("Enter email").fill(
-        "already-registered@example.com"
+        "already-registered@example.com"  # provide email
     )  # TODO remove explicit email from code
     page.get_by_label("Enter password").fill(
-        "already-registered-correct-password"
+        "already-registered-correct-password"  # provide password
     )  # TODO remove explicit password from code
     page.get_by_role("button", name="Login").click()
     # Check User Profile cabinet
