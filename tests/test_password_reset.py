@@ -17,7 +17,7 @@ def test_password_reset(playwright: Playwright) -> None:
     page.get_by_role("link", name="Forgot your password?").click()
     page.get_by_label("Enter email").click()
     page.get_by_label("Enter email").fill(
-        "example@example.com"
+        "oleski-test@ukr.net"
     )  # TODO remove explicit email from code
     expect(page.locator("#qa-restore-button")).to_contain_text("Restore")
     page.get_by_role("button", name="Restore").click()

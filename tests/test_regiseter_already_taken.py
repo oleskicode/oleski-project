@@ -16,7 +16,7 @@ def test_username_already_taken(playwright: Playwright) -> None:
     expect(page.get_by_role("main")).to_contain_text("Create your account")
     page.get_by_label("Enter email").click()
     page.get_by_label("Enter email").fill(
-        "example@example.com"
+        "oleski-test@ukr.net"
     )  # TODO remove explicit email from code
     page.get_by_role("button", name="Create").click()
     expect(page.locator("#qa-error-text")).to_contain_text(

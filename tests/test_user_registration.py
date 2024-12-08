@@ -12,7 +12,7 @@ def run(playwright: Playwright) -> None:
     page.get_by_role("button", name="Create").click()
     page.get_by_label("Enter email").click()
     page.get_by_label("Enter email").fill(
-        "example@example.com"
+        "oleski-test@ukr.net"
     )  # TODO insert some new unused email here
     page.get_by_role("button", name="Create").click()
     # Create Account Page Checks

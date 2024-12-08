@@ -9,7 +9,7 @@ def test_login(playwright: Playwright) -> None:
     page.goto("https://freevpnplanet.com/")
     page.get_by_role("link", name="login").click()
     page.get_by_label("Enter email").fill(
-        "example@example.com"
+        "oleski-test@ukr.net"
     )  # TODO remove explicit email from code
     page.get_by_label("Enter password").fill(
         "explicit-password"
