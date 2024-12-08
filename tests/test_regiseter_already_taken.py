@@ -1,6 +1,6 @@
 import re
 from playwright.sync_api import Playwright, sync_playwright, expect
-
+# provide already registered email in line 20
 
 def test_username_already_taken(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
@@ -16,7 +16,7 @@ def test_username_already_taken(playwright: Playwright) -> None:
     expect(page.get_by_role("main")).to_contain_text("Create your account")
     page.get_by_label("Enter email").click()
     page.get_by_label("Enter email").fill(
-        "oleski-test@ukr.net"
+        "already-taken-email@example.com"
     )  # TODO remove explicit email from code
     page.get_by_role("button", name="Create").click()
     expect(page.locator("#qa-error-text")).to_contain_text(
