@@ -2,9 +2,10 @@
 venv/
 .env/
 
-# IDE files
+# IDE files and test results
 .idea/
 .vscode/
+results/
 
 # compiled files, logs and cache
 *.pyc
